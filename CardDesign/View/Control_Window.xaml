@@ -1,0 +1,24 @@
+﻿<Window x:Class="CardDesign.Control_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Control_Window" Height="598.186" Width="1478.55"
+        Left="0"
+        Top="0">
+    <Grid Margin="10,0,2,3">
+        <TextBox x:Name="infoTextBox1" Background="Black" Foreground="Yellow" HorizontalAlignment="Left" Height="142" Margin="0,422,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="1176"/>
+        <TextBox x:Name="infoTextBox2" Background="Black" Foreground="Yellow" HorizontalAlignment="Left" Height="417" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="1176"/>
+        <Button Content="Start" HorizontalAlignment="Left" Margin="1204,369,0,0" VerticalAlignment="Top" Width="239" Height="59" Click="Button_Click_Start"/>
+        <ComboBox x:Name="ComBox" HorizontalAlignment="Left" Margin="1204,126,0,0" VerticalAlignment="Top" Width="239" Height="28" SelectionChanged="ComBox_SelectionChanged"/>
+        <Button Content="End" HorizontalAlignment="Left" Margin="1204,496,0,0" VerticalAlignment="Top" Width="239" Height="58" Click="Button_Click_End"/>
+        <Button Content="Save" HorizontalAlignment="Left" Margin="1204,433,0,0" VerticalAlignment="Top" Width="239" Height="58" Click="Button_Click_Save"/>
+        <TextBox x:Name="groupName" HorizontalAlignment="Left" Height="23" Margin="1204,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="239" />
+        <StackPanel HorizontalAlignment="Left" Margin="1204,56,0,0" VerticalAlignment="Top" Height="70" Width="239">
+            <RadioButton x:Name="Mode1" GroupName="mode" Content="Turn-Taking" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+            <RadioButton x:Name="Mode2" GroupName="mode" Content="Simultaneous" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="18"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Margin="1204,178,0,0" VerticalAlignment="Top" Height="38" Width="239">
+            <RadioButton x:Name="GroupName1" GroupName="categories" Content="" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="11" Checked="GroupName1_Checked"/>
+            <RadioButton x:Name="GroupName2" GroupName="categories" Content="" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="11" Checked="GroupName2_Checked"/>
+        </StackPanel>
+    </Grid>
+</Window>

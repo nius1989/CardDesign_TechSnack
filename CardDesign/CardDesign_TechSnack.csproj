@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0B59BB5B-13D6-4000-B331-657A3B3FA3D6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CardDesign</RootNamespace>
+    <AssemblyName>CardDesign</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Control\Card_Controler.cs" />
+    <Compile Include="Control\Gesture_Copying_Listener.cs" />
+    <Compile Include="Control\Gesture_Cutting_Link_Listener.cs" />
+    <Compile Include="Control\Gesture_Cutting_Sorting_Listener.cs" />
+    <Compile Include="Control\Gesture_SortingGroup_Listener.cs" />
+    <Compile Include="Control\Gesture_Showing_Sorting_Listener.cs" />
+    <Compile Include="Control\Sorting_Group_Controler.cs" />
+    <Compile Include="Control\Gesture_Emphasizing_Listener.cs" />
+    <Compile Include="Control\Gesture_Grouping_Listener.cs" />
+    <Compile Include="Control\Gesture_Controler.cs" />
+    <Compile Include="Control\Gesture_Linking_Listener.cs" />
+    <Compile Include="Control\Gesture_Sorting_Listener.cs" />
+    <Compile Include="Control\Gesture_Showing_Listener.cs" />
+    <Compile Include="Control\Sorting_Icon_Controler.cs" />
+    <Compile Include="Control\Joint_Interest_Controler.cs" />
+    <Compile Include="Control\Touch_Controler.cs" />
+    <Compile Include="Control\User_Controler.cs" />
+    <Compile Include="Model\Card_List.cs" />
+    <Compile Include="Model\Gesture_Event_Copying.cs" />
+    <Compile Include="Model\Gesture_Event_Cutting_Link.cs" />
+    <Compile Include="Model\Gesture_Event_Cutting_Sorting.cs" />
+    <Compile Include="Model\Gesture_Event_SortingGroup.cs" />
+    <Compile Include="Model\Gesture_Event_Showing_Sorting.cs" />
+    <Compile Include="Model\Group_List.cs" />
+    <Compile Include="Model\Gesture_Event_Emphasizing.cs" />
+    <Compile Include="Model\Gesture_Event_Args.cs" />
+    <Compile Include="Model\Gesture_Event_Grouping.cs" />
+    <Compile Include="Model\Gesture_Event_Linking.cs" />
+    <Compile Include="Model\Gesture_Event_Sorting.cs" />
+    <Compile Include="Model\Gesture_Event_Showing.cs" />
+    <Compile Include="Model\Gesture_List.cs" />
+    <Compile Include="Control\Gesture_Listener.cs" />
+    <Compile Include="Model\Link_List.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Tool\Calculator.cs" />
+    <Compile Include="Tool\LinearMatrixAnimation.cs" />
+    <Compile Include="Tool\Record_Helper.cs" />
+    <Compile Include="View\Grouping_Gesture_Layer.xaml.cs">
+      <DependentUpon>Grouping_Gesture_Layer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Copy_Icon.xaml.cs">
+      <DependentUpon>Copy_Icon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Linking_Icon.xaml.cs">
+      <DependentUpon>Linking_Icon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Menu_Sort_Button.xaml.cs">
+      <DependentUpon>Menu_Sort_Button.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Gesture_Indicator_Layer.xaml.cs">
+      <DependentUpon>Gesture_Indicator_Layer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Card.xaml.cs">
+      <DependentUpon>Card.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Gesture_Event.cs" />
+    <Compile Include="Model\My_Point.cs" />
+    <Compile Include="Model\Point_List.cs" />
+    <Compile Include="Tool\STATICS.cs" />
+    <Compile Include="Tool\Time_Helper.cs" />
+    <Compile Include="View\Card_Layer.xaml.cs">
+      <DependentUpon>Card_Layer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Control_Window.xaml.cs">
+      <DependentUpon>Control_Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Bottom_Layer.xaml.cs">
+      <DependentUpon>Bottom_Layer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Menu_Container.xaml.cs">
+      <DependentUpon>Menu_Container.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Linking_Gesture_Layer.xaml.cs">
+      <DependentUpon>Linking_Gesture_Layer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Menu_Layer.xaml.cs">
+      <DependentUpon>Menu_Layer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sorting_Gesture_Layer.xaml.cs">
+      <DependentUpon>Sorting_Gesture_Layer.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\Grouping_Gesture_Layer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Copy_Icon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Linking_Icon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Menu_Sort_Button.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Gesture_Indicator_Layer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Card.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Card_Layer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Control_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Bottom_Layer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Menu_Container.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Linking_Gesture_Layer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Menu_Layer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Sorting_Gesture_Layer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Resource\Card\Contextual Card\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Card\Activity Card\Slide1.JPG" />
+    <Resource Include="Resource\Card\Activity Card\Slide10.JPG" />
+    <Resource Include="Resource\Card\Activity Card\Slide11.JPG" />
+    <Resource Include="Resource\Card\Activity Card\Slide12.JPG" />
+    <Resource Include="Resource\Card\Activity Card\Slide13.JPG" />
+    <Resource Include="Resource\Card\Activity Card\Slide14.JPG" />
+    <Resource Include="Resource\Card\Activity Card\Slide15.JPG" />
+    <Resource Include="Resource\Card\Activity Card\Slide16.JPG" />
+    <Resource Include="Resource\Card\Activity Card\Slide17.JPG" />
+    <Resource Include="Resource\Card\Activity Card\Slide18.JPG" />
+    <Resource Include="Resource\Card\Activity Card\Slide19.JPG" />
+    <Resource Include="Resource\Card\Activity Card\Slide2.JPG" />
+    <Resource Include="Resource\Card\Activity Card\Slide20.JPG" />
+    <Resource Include="Resource\Card\Activity Card\Slide21.JPG" />
+    <Resource Include="Resource\Card\Activity Card\Slide22.JPG" />
+    <Resource Include="Resource\Card\Activity Card\Slide23.JPG" />
+    <Resource Include="Resource\Card\Activity Card\Slide24.JPG" />
+    <Resource Include="Resource\Card\Activity Card\Slide25.JPG" />
+    <Resource Include="Resource\Card\Activity Card\Slide26.JPG" />
+    <Resource Include="Resource\Card\Activity Card\Slide27.JPG" />
+    <Resource Include="Resource\Card\Activity Card\Slide28.JPG" />
+    <Resource Include="Resource\Card\Activity Card\Slide29.JPG" />
+    <Resource Include="Resource\Card\Activity Card\Slide3.JPG" />
+    <Resource Include="Resource\Card\Activity Card\Slide30.JPG" />
+    <Resource Include="Resource\Card\Activity Card\Slide31.JPG" />
+    <Resource Include="Resource\Card\Activity Card\Slide32.JPG" />
+    <Resource Include="Resource\Card\Activity Card\Slide4.JPG" />
+    <Resource Include="Resource\Card\Activity Card\Slide5.JPG" />
+    <Resource Include="Resource\Card\Activity Card\Slide6.JPG" />
+    <Resource Include="Resource\Card\Activity Card\Slide7.JPG" />
+    <Resource Include="Resource\Card\Activity Card\Slide8.JPG" />
+    <Resource Include="Resource\Card\Activity Card\Slide9.JPG" />
+    <Resource Include="Resource\Card\config.txt" />
+    <Resource Include="Resource\Card\Contextual Card\Slide1.JPG" />
+    <Resource Include="Resource\Card\Contextual Card\Slide10.JPG" />
+    <Resource Include="Resource\Card\Contextual Card\Slide11.JPG" />
+    <Resource Include="Resource\Card\Contextual Card\Slide12.JPG" />
+    <Resource Include="Resource\Card\Contextual Card\Slide13.JPG" />
+    <Resource Include="Resource\Card\Contextual Card\Slide14.JPG" />
+    <Resource Include="Resource\Card\Contextual Card\Slide15.JPG" />
+    <Resource Include="Resource\Card\Contextual Card\Slide16.JPG" />
+    <Resource Include="Resource\Card\Contextual Card\Slide17.JPG" />
+    <Resource Include="Resource\Card\Contextual Card\Slide18.JPG" />
+    <Resource Include="Resource\Card\Contextual Card\Slide19.JPG" />
+    <Resource Include="Resource\Card\Contextual Card\Slide2.JPG" />
+    <Resource Include="Resource\Card\Contextual Card\Slide20.JPG" />
+    <Resource Include="Resource\Card\Contextual Card\Slide21.JPG" />
+    <Resource Include="Resource\Card\Contextual Card\Slide22.JPG" />
+    <Resource Include="Resource\Card\Contextual Card\Slide23.JPG" />
+    <Resource Include="Resource\Card\Contextual Card\Slide24.JPG" />
+    <Resource Include="Resource\Card\Contextual Card\Slide25.JPG" />
+    <Resource Include="Resource\Card\Contextual Card\Slide26.JPG" />
+    <Resource Include="Resource\Card\Contextual Card\Slide27.JPG" />
+    <Resource Include="Resource\Card\Contextual Card\Slide28.JPG" />
+    <Resource Include="Resource\Card\Contextual Card\Slide29.JPG" />
+    <Resource Include="Resource\Card\Contextual Card\Slide3.JPG" />
+    <Resource Include="Resource\Card\Contextual Card\Slide30.JPG" />
+    <Resource Include="Resource\Card\Contextual Card\Slide31.JPG" />
+    <Resource Include="Resource\Card\Contextual Card\Slide4.JPG" />
+    <Resource Include="Resource\Card\Contextual Card\Slide5.JPG" />
+    <Resource Include="Resource\Card\Contextual Card\Slide6.JPG" />
+    <Resource Include="Resource\Card\Contextual Card\Slide7.JPG" />
+    <Resource Include="Resource\Card\Contextual Card\Slide8.JPG" />
+    <Resource Include="Resource\Card\Contextual Card\Slide9.JPG" />
+    <Resource Include="Resource\Card\Tool Card\Slide1.JPG" />
+    <Resource Include="Resource\Card\Tool Card\Slide10.JPG" />
+    <Resource Include="Resource\Card\Tool Card\Slide11.JPG" />
+    <Resource Include="Resource\Card\Tool Card\Slide12.JPG" />
+    <Resource Include="Resource\Card\Tool Card\Slide13.JPG" />
+    <Resource Include="Resource\Card\Tool Card\Slide14.JPG" />
+    <Resource Include="Resource\Card\Tool Card\Slide15.JPG" />
+    <Resource Include="Resource\Card\Tool Card\Slide2.JPG" />
+    <Resource Include="Resource\Card\Tool Card\Slide3.JPG" />
+    <Resource Include="Resource\Card\Tool Card\Slide4.JPG" />
+    <Resource Include="Resource\Card\Tool Card\Slide5.JPG" />
+    <Resource Include="Resource\Card\Tool Card\Slide6.JPG" />
+    <Resource Include="Resource\Card\Tool Card\Slide7.JPG" />
+    <Resource Include="Resource\Card\Tool Card\Slide8.JPG" />
+    <Resource Include="Resource\Card\Tool Card\Slide9.JPG" />
+    <Resource Include="Resource\Image\arrow.png" />
+    <Resource Include="Resource\Image\arrow1.png" />
+    <Resource Include="Resource\Image\arrow2.png" />
+    <Resource Include="Resource\Image\arrow3.png" />
+    <Resource Include="Resource\Image\arrow4.png" />
+    <Resource Include="Resource\Image\bg.png" />
+    <Resource Include="Resource\Image\menu_bg.png" />
+    <Resource Include="Resource\Layout\layout1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Image\card_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Image\blue_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Image\link_icon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
